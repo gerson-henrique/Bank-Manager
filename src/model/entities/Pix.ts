@@ -1,13 +1,22 @@
 export default class Pix {
-  value:number;
+  private _value:number;
   senderId:number;
   key:string;
   date: Date;
 
-  constructor(value: number, senderId:number, key:string, date:Date) {
-    this.value = value,
+  constructor( senderId:number, key:string, date:Date) {
+    this._value = 0,
     this.senderId = senderId,
     this.key = key,
     this.date = date
   }
+
+  set value(value:number){
+    this._value = value
+  }
+
+  get value(){
+    return this._value
+  }
+
 }
